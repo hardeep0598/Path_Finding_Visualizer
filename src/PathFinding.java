@@ -301,9 +301,9 @@ public class PathFinding {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(frame, "	                         Pathfinding\n"
-												   + "             Copyright (c) 2017-2018\n"
-												   + "                         Greer Viau\n"
-												   + "          Build Date:  March 28, 2018   ", "Credit", JOptionPane.PLAIN_MESSAGE, new ImageIcon(""));
+												   + "             Build by : Hardeep Kaur."
+												   + "                       github : https://github.com/hardeep0598 \n"
+												   + "          Build Date:  October, 2020   ", "Credit", JOptionPane.PLAIN_MESSAGE, new ImageIcon(""));
 			}
 		});
 		
@@ -475,14 +475,6 @@ public class PathFinding {
 	
 	class Algorithm {	//ALGORITHM CLASS
 		
-		//DIJKSTRA WORKS BY PROPAGATING OUTWARDS UNTIL IT FINDS THE FINISH AND THEN WORKING ITS WAY BACK TO GET THE PATH
-		//IT USES A PRIORITY QUE TO KEEP TRACK OF NODES THAT IT NEEDS TO EXPLORE
-		//EACH NODE IN THE PRIORITY QUE IS EXPLORED AND ALL OF ITS NEIGHBORS ARE ADDED TO THE QUE
-		//ONCE A NODE IS EXLPORED IT IS DELETED FROM THE QUE
-		//AN ARRAYLIST IS USED TO REPRESENT THE PRIORITY QUE
-		//A SEPERATE ARRAYLIST IS RETURNED FROM A METHOD THAT EXPLORES A NODES NEIGHBORS
-		//THIS ARRAYLIST CONTAINS ALL THE NODES THAT WERE EXPLORED, IT IS THEN ADDED TO THE QUE
-		//A HOPS VARIABLE IN EACH NODE REPRESENTS THE NUMBER OF NODES TRAVELED FROM THE START
 		public void Dijkstra() {
 			ArrayList<Node> priority = new ArrayList<Node>();	//CREATE A PRIORITY QUE
 			priority.add(map[startx][starty]);	//ADD THE START TO THE QUE
@@ -504,10 +496,6 @@ public class PathFinding {
 			}
 		}
 		
-		//A STAR WORKS ESSENTIALLY THE SAME AS DIJKSTRA CREATING A PRIORITY QUE AND PROPAGATING OUTWARDS UNTIL IT FINDS THE END
-		//HOWEVER ASTAR BUILDS IN A HEURISTIC OF DISTANCE FROM ANY NODE TO THE FINISH
-		//THIS MEANS THAT NODES THAT ARE CLOSER TO THE FINISH WILL BE EXPLORED FIRST
-		//THIS HEURISTIC IS BUILT IN BY SORTING THE QUE ACCORDING TO HOPS PLUS DISTANCE UNTIL THE FINISH
 		public void AStar() {
 			ArrayList<Node> priority = new ArrayList<Node>();
 			priority.add(map[startx][starty]);
